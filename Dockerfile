@@ -1,4 +1,4 @@
-FROM circleci/node:9
+FROM circleci/node:12
 LABEL maintainer="moroine.bentefrit@adactive.com"
 
 ENV DEBIAN_FRONTEND noninteractive
