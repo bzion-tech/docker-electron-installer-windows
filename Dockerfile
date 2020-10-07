@@ -1,5 +1,5 @@
 FROM circleci/node:12
-LABEL maintainer="moroine.bentefrit@adactive.com"
+LABEL maintainer="rafael@bzion.com.br"
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -13,8 +13,8 @@ RUN sudo apt-get update && \
   sudo apt-add-repository https://download.mono-project.com/repo/debian && \
   sudo apt-get update && \
   sudo apt-get -y purge software-properties-common libdbus-glib-1-2 python3-dbus python3-gi python3-pycurl python3-software-properties && \
-  sudo apt-get install -y --install-recommends winehq-stable && \
-  sudo apt-get install -y --install-recommends mono-devel && \
+  sudo apt-get install -y --allow-unauthenticated --install-recommends winehq-stable && \
+  sudo apt-get install -y --allow-unauthenticated --install-recommends mono-devel && \
   sudo apt-get clean && sudo rm -rf /var/lib/apt/lists/* && unlink /tmp/Release.key
 
 ENV WINEPREFIX /home/circleci/.wine
